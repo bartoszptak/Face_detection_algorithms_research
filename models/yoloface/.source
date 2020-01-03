@@ -1,0 +1,5 @@
+[yolov3-face.cfg]
+https://docs.google.com/uc?export=download&id=13gFDLFhhBqwMw6gf8jVUvNDH2UrgCCrX
+
+[yolov3-wider_16000.weights]
+https://raw.githubusercontent.com/sthanhng/yoloface/master/cfg/yolov3-face.cfg

@@ -1,0 +1,5 @@
+[opencv_face_detector.pbtxt]
+https://github.com/spmallick/learnopencv/raw/master/AgeGender/opencv_face_detector.pbtxt
+
+[opencv_face_detector_uint8.pb]
+https://github.com/spmallick/learnopencv/blob/master/AgeGender/opencv_face_detector_uint8.pb?raw=true
