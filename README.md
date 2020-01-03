@@ -1,4 +1,4 @@
-# Face_detection_research_plus_face_blurring
+# Face detection research + face blurring
 
 ### Algorithms
 * [Frontal face cascade classifier from OpenCV](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html)
