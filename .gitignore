@@ -1,7 +1,7 @@
 ### OWN
 FDDB_DataSet_4_faster_rcnn
 *.weights
-
+.vscode/
 
 
 # Created by https://www.gitignore.io/api/vim,python,jupyternotebooks,visualstudiocode
