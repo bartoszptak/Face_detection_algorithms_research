@@ -65,7 +65,7 @@ def main(model, size, mode, path, face):
         cv2.waitKey(0)
         cv2.destroyAllWindows()
     elif mode == 'bench':
-        acc, fps = make_benchmark(net, size, path)
+        acc, fps = make_benchmark(net, path)
         print(f'[LOGS] Benchmark for {model} model')
         print(f'[LOGS] Acc: {acc}')
         print(f'[LOGS] Fps: {fps}')
