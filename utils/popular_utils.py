@@ -32,7 +32,7 @@ def make_benchmark(net,
                    ):
 
     xmls = glob.glob(os.path.join(data_path, 'Annotations/*.xml'))
-    print(f'[LOG] Found {len(xmls)} annotations')    
+    print(f'[LOGS] Found {len(xmls)} annotations')    
 
     for pt in glob.glob(os.path.join(gt_path, '*.txt'))+glob.glob(os.path.join(pred_path, '*.txt')):
         os.remove(pt)
@@ -67,8 +67,8 @@ def make_benchmark(net,
 
     os.remove(os.path.join('mAP', 'results', 'results.txt'))
 
-    print('[LOG] Calculate mAP')
+    print('[LOGS] Calculate mAP')
     process = subprocess.Popen(['python', 'mAP/main.py', '--no-animation', '--no-plot', '--quiet'], stdout=subprocess.PIPE)
     stdout = process.communicate()[0]
 
-    return float(stdout.decode().split()[-1][:-1])/100, imgs/tim
+    return tim, float(stdout.decode().split()[-1][:-1])/100, imgs/tim
