@@ -31,7 +31,7 @@ class YolofaceModel:
         outs = self.net.forward(self.outputs)
 
         final_boxes = self.post_process(img, outs, 0.5, 0.4)
-
+        
         return final_boxes
 
     def refined_box(self, left, top, width, height):

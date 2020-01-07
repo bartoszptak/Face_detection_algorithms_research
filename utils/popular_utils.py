@@ -28,11 +28,15 @@ def blur_predict(img, preds):
 def make_benchmark(net, 
                    data_path=os.path.join('data', 'FDDB_DataSet_4_faster_rcnn', 'FDDB_2010'),
                    gt_path = os.path.join('mAP','input','ground-truth'),
-                   pred_path =os.path.join('mAP','input','detection-results')
-                   ):
+                   pred_path =os.path.join('mAP','input','detection-results'),
+                   size=None):
 
     xmls = glob.glob(os.path.join(data_path, 'Annotations/*.xml'))
-    print(f'[LOGS] Found {len(xmls)} annotations')    
+
+    if size:
+        xmls = xmls[:int(size)]
+
+    print(f'[LOGS] Use {len(xmls)} annotations')    
 
     for pt in glob.glob(os.path.join(gt_path, '*.txt'))+glob.glob(os.path.join(pred_path, '*.txt')):
         os.remove(pt)
@@ -65,7 +69,8 @@ def make_benchmark(net,
                 xmin, ymin, xmax, ymax = bndbox.find("xmin").text, bndbox.find("ymin").text, bndbox.find("xmax").text, bndbox.find("ymax").text
                 print(f'face {xmin} {ymin} {xmax} {ymax}', file=f)
 
-    os.remove(os.path.join('mAP', 'results', 'results.txt'))
+    if os.path.isfile(os.path.join('mAP', 'results', 'results.txt')):
+        os.remove(os.path.join('mAP', 'results', 'results.txt'))
 
     print('[LOGS] Calculate mAP')
     process = subprocess.Popen(['python', 'mAP/main.py', '--no-animation', '--no-plot', '--quiet'], stdout=subprocess.PIPE)
