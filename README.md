@@ -28,7 +28,7 @@
 | Frontal face detector<br>from dlib |  |  |  |
 | CNN face detection <br>model from dlib |  |  |  |
 | yoloface model |  |  |  |
-| face MTCNN model | 486.84 | 5.65 | 0.7745 |
+| face MTCNN model |  |  | |
 | DNN Face Detector |  |  |  |
 
 * benchmarking on Intel Core i5-8400 with NVIDIA GTX1060
@@ -39,7 +39,7 @@
 | Frontal face detector<br>from dlib |  |  |  |
 | CNN face detection <br>model from dlib |  |  |  |
 | yoloface model |  |  |  |
-| face MTCNN model | 486.84 | 5.65 | 0.7745 |
+| face MTCNN model | | |  |
 | DNN Face Detector |  |  |  |
 
 ### Conclusions
