@@ -24,23 +24,23 @@
 
 | Model<br>name | *Total<br>time (s) | **FPS<br>(img/s) | FDDB 2010<br>mAP@0.5 |
 |:-----------------------------------------------:|:------------------:|:----------------:|:--------------------:|
-| Frontal face cascade <br>classifier from OpenCV |  |  |  |
-| Frontal face detector<br>from dlib |  |  |  |
+| Frontal face cascade <br>classifier from OpenCV | 83.57 | 32.90 | 0.0001 |
+| Frontal face detector<br>from dlib | 135.31 | 20.33 | 0.5227 |
 | CNN face detection <br>model from dlib |  |  |  |
 | yoloface model |  |  |  |
-| face MTCNN model |  |  | |
-| DNN Face Detector |  |  |  |
+| face MTCNN model | 186.82 | 14.72 | 0.7745 |
+| DNN Face Detector | 34.50 | 79.71 | 0.7008 |
 
 * benchmarking on Intel Core i5-8400 with NVIDIA GTX1060
 
 | Model<br>name | *Total<br>time (s) | **FPS<br>(img/s) | FDDB 2010<br>mAP@0.5 |
 |:-----------------------------------------------:|:------------------:|:----------------:|:--------------------:|
-| Frontal face cascade <br>classifier from OpenCV |  |  |  |
-| Frontal face detector<br>from dlib |  |  |  |
+| Frontal face cascade <br>classifier from OpenCV | - | - | 0.0001 |
+| Frontal face detector<br>from dlib | 135.32 | 20.32 | 0.5227 |
 | CNN face detection <br>model from dlib |  |  |  |
 | yoloface model |  |  |  |
-| face MTCNN model | | |  |
-| DNN Face Detector |  |  |  |
+| face MTCNN model | 122.74 | 22.41 | 0.7745 |
+| DNN Face Detector | 16.25 | 169.12 | 0.7008 |
 
 ### Conclusions
 **I leave the subject open for you. I only share the results, with a friendly model-prediction interface. You should decide for yourself whether you need FPS or high mAP.**
