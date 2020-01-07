@@ -7,10 +7,16 @@ import os
 class YolofaceModel:
     def __init__(self,
                  size,
+                 gpu,
                  cfg=os.path.join('models', 'yoloface', 'yolov3-face.cfg'),
                  weights=os.path.join('models', 'yoloface', 'yolov3-wider_16000.weights')):
 
         self.net = cv2.dnn.readNetFromDarknet(cfg, weights)
+
+        if gpu:
+            self.net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
+            self.net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
+
         self.size = size
 
         def get_outputs_names(net):

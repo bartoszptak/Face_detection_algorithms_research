@@ -4,7 +4,13 @@ import os
 
 
 class DlibModel:
-    def __init__(self, size):
+    def __init__(self, size, gpu):
+
+        if gpu:
+            dlib.DLIB_USE_CUDA = True
+        else:
+            dlib.DLIB_USE_CUDA = False
+
         self.detector = dlib.get_frontal_face_detector()
         self.size = size
 
@@ -29,6 +35,12 @@ class DlibModel2:
     def __init__(self,
                  size,
                  dat_file=os.path.join('models', 'dlib', 'mmod_human_face_detector.dat')):
+
+        if gpu:
+            dlib.DLIB_USE_CUDA = True
+        else:
+            dlib.DLIB_USE_CUDA = False
+
         self.detector = dlib.cnn_face_detection_model_v1(dat_file)
         self.size = size
 

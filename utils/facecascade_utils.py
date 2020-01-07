@@ -5,9 +5,13 @@ import os
 class HaarModel:
     def __init__(self,
                  size,
+                 gpu,
                  xml_path=os.path.join(
                      'models', 'haarcascade', 'haarcascade_frontalface_default.xml')
                  ):
+        if gpu:
+            print('[LOGS] CascadeClassifier not use GPU anymore')
+            
         self.face_cascade = cv2.CascadeClassifier(xml_path)
         self.size = size
 

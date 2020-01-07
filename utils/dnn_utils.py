@@ -5,12 +5,17 @@ import os
 class DNNModel:
     def __init__(self,
                  size,
+                 gpu,
                  model=os.path.join('models', 'dnn', 'opencv_face_detector_uint8.pb'),
                  proto=os.path.join(
                      'models', 'dnn', 'opencv_face_detector.pbtxt')):
 
         self.size = size
         self.net = cv2.dnn.readNetFromTensorflow(model, proto)
+
+        if gpu:
+            self.net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
+            self.net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
 
     def predict(self, img):
         frameHeight = img.shape[0]

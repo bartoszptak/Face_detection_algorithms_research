@@ -1,9 +1,16 @@
-from mtcnn import MTCNN
 import cv2
+import os
 
 
 class MtcnnModel:
-    def __init__(self, size):
+    def __init__(self, size, gpu):
+        if gpu:
+            os.environ["CUDA_VISIBLE_DEVICES"]="0"
+            from mtcnn import MTCNN
+        else:
+            os.environ["CUDA_VISIBLE_DEVICES"]="-1"
+            from mtcnn import MTCNN
+            
         self.detector = MTCNN()
 
     def predict(self, img):

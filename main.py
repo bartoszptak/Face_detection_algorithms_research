@@ -8,31 +8,31 @@ from utils.popular_utils import draw_predict, make_benchmark
 
 
 
-def select_model(model, size):
+def select_model(model, size, gpu):
     if model == 'haar':
         print('[LOGS] Load frontal face cascade classifier from OpenCV')
         from utils.facecascade_utils import HaarModel
-        model = HaarModel(size)
+        model = HaarModel(size, gpu)
     elif model == 'dlib':
         print('[LOGS] Load frontal face detector from dlib')
         from utils.dlib_utils import DlibModel
-        model = DlibModel(size)
+        model = DlibModel(size, gpu)
     elif model == 'dlib2':
         print('[LOGS] Load CNN face detection model from dlib')
         from utils.dlib_utils import DlibModel2
-        model = DlibModel2(size)
+        model = DlibModel2(size, gpu)
     elif model == 'yoloface':
         print('[LOGS] Load yoloface model')
         from utils.yoloface_utils import YolofaceModel
-        model = YolofaceModel(size)
+        model = YolofaceModel(size, gpu)
     elif model == 'mtcnn':
         print('[LOGS] Load face MTCNN model')
         from utils.mtcnn_utils import MtcnnModel
-        model = MtcnnModel(size)
+        model = MtcnnModel(size, gpu)
     elif model == 'dnn':
         print('[LOGS] Load DNN Face Detector')
         from utils.dnn_utils import DNNModel
-        model = DNNModel(size)
+        model = DNNModel(size, gpu)
 
     else:
         print('[LOGS] Model option not supported')
@@ -49,9 +49,10 @@ def select_model(model, size):
 @click.option('--path', default='data/people-brasil-guys-avpaulista-109919.jpg', help='samle: path to image, bench: path do data dir', required=True)
 @click.option('--face', default='silent', help='Model type [draw, silent]', required=False)
 @click.option('--bench-size', default=None, help='Length of examples on benchmark', required=False)
-def main(model, size, mode, path, face, bench_size):
+@click.option('--gpu', is_flag=True, help='If possible, use GPU')
+def main(model, size, mode, path, face, bench_size, gpu):
     size = int(size)
-    net = select_model(model, size)
+    net = select_model(model, size, gpu)
 
     if mode == 'sample':
         img = cv2.imread(path)
