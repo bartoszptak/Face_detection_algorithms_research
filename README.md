@@ -1,4 +1,4 @@
-# Face detection research
+# Face detection algorithms research
 
 ### Algorithms
 * [Frontal face cascade classifier from OpenCV](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html)
