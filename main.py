@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 import click
 
-from utils.popular_utils import draw_predict, blur_predict, make_benchmark
+from utils.popular_utils import draw_predict, make_benchmark
 
 
 
