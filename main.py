@@ -43,12 +43,13 @@ def select_model(model, size):
 
 
 @click.command()
-@click.option('--model', default=None, help='Model type [haar, dlib, yoloface, mtcnn]', required=True)
+@click.option('--model', default=None, help='Model type [haar, dlib, dlib2, yoloface, mtcnn, dnn]', required=True)
 @click.option('--size', default=416, help='Image size', required=True)
 @click.option('--mode', default=None, help='Model type [sample, bench]', required=True)
 @click.option('--path', default='data/people-brasil-guys-avpaulista-109919.jpg', help='samle: path to image, bench: path do data dir', required=True)
-@click.option('--face', default='silent', help='Model type [draw, blur, silent]', required=True)
-def main(model, size, mode, path, face):
+@click.option('--face', default='silent', help='Model type [draw, blur, silent]', required=False)
+@click.option('--bench-size', default=None, help='Length of examples on benchmark', required=False)
+def main(model, size, mode, path, face, bench_size):
     size = int(size)
     net = select_model(model, size)
 
@@ -65,10 +66,10 @@ def main(model, size, mode, path, face):
         cv2.waitKey(0)
         cv2.destroyAllWindows()
     elif mode == 'bench':
-        ttime, acc, fps = make_benchmark(net, path)
+        ttime, acc, fps = make_benchmark(net, data_path=path, size=bench_size)
         print(f'[LOGS] Benchmark for {model} model')
         print(f'[LOGS] Total time {ttime}')
-	print(f'[LOGS] Acc: {acc}')
+        print(f'[LOGS] mAP: {acc}')
         print(f'[LOGS] Fps: {fps}')
 
 
