@@ -34,6 +34,7 @@ class DlibModel:
 class DlibModel2:
     def __init__(self,
                  size,
+                 gpu,
                  dat_file=os.path.join('models', 'dlib', 'mmod_human_face_detector.dat')):
 
         if gpu:

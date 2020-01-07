@@ -28,5 +28,4 @@ class HaarModel:
         for ff in faces:
             faces_new.append([int(f/scale) for f in ff])
 
-        print(faces_new)
         return faces_new
