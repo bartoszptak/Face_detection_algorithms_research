@@ -26,8 +26,8 @@
 |:-----------------------------------------------:|:------------------:|:----------------:|:--------------------:|
 | Frontal face cascade <br>classifier from OpenCV | 83.57 | 32.90 | 0.0001 |
 | Frontal face detector<br>from dlib | 135.31 | 20.33 | 0.5227 |
-| CNN face detection <br>model from dlib |  |  |  |
-| yoloface model |  |  |  |
+| CNN face detection <br>model from dlib | - | - | 0.3396 |
+| yoloface model | 397.95 | 6.91 | 0.4847 |
 | face MTCNN model | 186.82 | 14.72 | 0.7745 |
 | DNN Face Detector | 34.50 | 79.71 | 0.7008 |
 
@@ -37,8 +37,8 @@
 |:-----------------------------------------------:|:------------------:|:----------------:|:--------------------:|
 | Frontal face cascade <br>classifier from OpenCV | - | - | 0.0001 |
 | Frontal face detector<br>from dlib | 135.32 | 20.32 | 0.5227 |
-| CNN face detection <br>model from dlib |  |  |  |
-| yoloface model |  |  |  |
+| CNN face detection <br>model from dlib | 3373.58 | 0.82 | 0.3396 |
+| yoloface model | 110.58 | 24.87 | 0.4847 |
 | face MTCNN model | 122.74 | 22.41 | 0.7745 |
 | DNN Face Detector | 16.25 | 169.12 | 0.7008 |
 
