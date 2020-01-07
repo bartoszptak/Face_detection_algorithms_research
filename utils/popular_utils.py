@@ -12,19 +12,6 @@ def draw_predict(img, preds):
         cv2.rectangle(img, (left, top), (right, bottom), (0,0,255), 2)
 
 
-def quantize_colors(img, colors):
-    """Reduce the number of colors in the image."""
-    img = img.astype('float')
-    return np.round(img/255*colors)/colors*255
-
-def blur_predict(img, preds):
-    return NotImplementedError
-    # for left, top, right, bottom in preds:
-    #     roi = img[top:bottom, left:right]
-    #     roi = quantize_colors(roi, 4)
-    #     roi = cv2.GaussianBlur(roi, (7,7), cv2.BORDER_REFLECT)
-    #     img[top:bottom, left:right] = roi
-
 def make_benchmark(net, 
                    data_path=os.path.join('data', 'FDDB_DataSet_4_faster_rcnn', 'FDDB_2010'),
                    gt_path = os.path.join('mAP','input','ground-truth'),

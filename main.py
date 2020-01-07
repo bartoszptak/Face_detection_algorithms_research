@@ -47,7 +47,7 @@ def select_model(model, size):
 @click.option('--size', default=416, help='Image size', required=True)
 @click.option('--mode', default=None, help='Model type [sample, bench]', required=True)
 @click.option('--path', default='data/people-brasil-guys-avpaulista-109919.jpg', help='samle: path to image, bench: path do data dir', required=True)
-@click.option('--face', default='silent', help='Model type [draw, blur, silent]', required=False)
+@click.option('--face', default='silent', help='Model type [draw, silent]', required=False)
 @click.option('--bench-size', default=None, help='Length of examples on benchmark', required=False)
 def main(model, size, mode, path, face, bench_size):
     size = int(size)
@@ -59,8 +59,6 @@ def main(model, size, mode, path, face, bench_size):
 
         if face=='draw':
             draw_predict(img, preds)
-        elif face=='blur':
-            blur_predict(img, preds)
 
         cv2.imshow('Result', img)
         cv2.waitKey(0)
