@@ -5,12 +5,12 @@ conda install -c conda-forge dlib
 conda activate face
 
 pip install \
-  opencv-python \
-  opencv-contrib-python \
   click \
   tqdm \
   mtcnn
 ```
+
+Build opencv with cuda backend by [this](https://github.com/bartoszptak/Efficient_Object_Detection_Algorithms_Research/blob/master/INSTALLATION_GUIDE.md) instruction.
 
 ### Installation
 
