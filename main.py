@@ -44,7 +44,7 @@ def select_model(model, size):
 
 @click.command()
 @click.option('--model', default=None, help='Model type [haar, dlib, dlib2, yoloface, mtcnn, dnn]', required=True)
-@click.option('--size', default=416, help='Image size', required=True)
+@click.option('--size', default=320, help='Image size', required=True)
 @click.option('--mode', default=None, help='Model type [sample, bench]', required=True)
 @click.option('--path', default='data/people-brasil-guys-avpaulista-109919.jpg', help='samle: path to image, bench: path do data dir', required=True)
 @click.option('--face', default='silent', help='Model type [draw, silent]', required=False)

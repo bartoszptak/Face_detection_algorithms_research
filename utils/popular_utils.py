@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 import os
 import time
 import subprocess
+from tqdm import tqdm
 
 
 def draw_predict(img, preds):
@@ -31,7 +32,8 @@ def make_benchmark(net,
     tim = 0.0
     imgs = 0
 
-    for xml_file in xmls:
+
+    for xml_file in tqdm(xmls):
         tree = ET.parse(xml_file)
         root = tree.getroot()
         
@@ -44,6 +46,8 @@ def make_benchmark(net,
         
         tim += (stop-start)
         imgs +=1
+
+        
         
         with open(os.path.join(pred_path, f'{filename}.txt'), 'w') as f:
             for xmin, ymin, xmax, ymax in preds:
